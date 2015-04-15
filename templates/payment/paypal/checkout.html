@@ -1,0 +1,48 @@
+{% extends 'payment/base.html' %}
+{% load static %}
+{% block content %}
+<script
+    src="https://www.paypal.com/sdk/js?client-id={{paypal_client_id}}"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+  </script>
+<section class="page-section-ptb login-signup parallax" >
+    <div class="container">
+            <div class="row mt-70">
+                <div class="col-lg-12 col-md-12 mx-auto text-center">
+                    <h4 class="mb-30 ">Checkout : {{currency}} {{price}}</h4>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="row">
+                            <div id="paypal-button-container" class="mx-auto"></div>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script>
+    paypal.Buttons({
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '{{price}}',
+            currencyCode: '{{currency}}'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function(details) {
+        // This function shows a transaction success message to your buyer.
+            window.location = "{{success_url}}";
+      });
+    }
+  }).render('#paypal-button-container');
+  </script>
+{% endblock %}

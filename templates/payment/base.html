@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+    {% block title %}
+
+    {% endblock title %}
+  </title>
+  <link rel="shortcut icon" href="{% static 'webster/images/favicon.ico' %}" />
+
+<!-- font -->
+<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,500i,600,700,800,900|Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800">
+
+<!-- Plugins -->
+<link rel="stylesheet" type="text/css" href="{% static 'webster/css/plugins-css.css' %}" />
+
+<!-- revoluation -->
+<link rel="stylesheet" type="text/css" href="{% static 'webster/revolution/css/settings.css' %}" media="screen" />
+
+<!-- Typography -->
+<link rel="stylesheet" type="text/css" href="{% static 'webster/css/typography.css' %}" />
+
+<!-- Shortcodes -->
+<link rel="stylesheet" type="text/css" href="{% static 'webster/css/shortcodes/shortcodes.css' %}" />
+
+<!-- Style -->
+<link rel="stylesheet" type="text/css" href="{% static 'webster/css/style.css' %}" />
+
+<!-- Responsive -->
+<link rel="stylesheet" type="text/css" href="{% static 'webster/css/responsive.css' %}" />
+
+     <style>
+    .nav-item{
+         width:32.9%;
+         background-color: white;
+    }
+    .nav-link-a {
+        font-size: 12px;
+        padding: 0px;
+    }
+    .nav-link active{
+        background-color: white;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+</head>
+    <body>
+        <input type="hidden" name="csrf_token" id="csrf_token" class="csrf_token" value="{{csrf_token}}">
+<div class="wrapper">
+
+<!--=================================
+ preloader -->
+
+
+</div>
+
+<header id="header" class="header light">
+  <!--<div class="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 xs-mb-10">
+        <div class="topbar-call text-center text-md-left">
+          <ul>
+            <li><i class="fa fa-envelope-o theme-color"></i> gethelp@yogachar.com</li>
+             <li><i class="fa fa-phone"></i> <a href="tel:+7042791249"> <span>+(704) 279-1249 </span> </a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="topbar-social text-center text-md-right">
+          <ul>
+            <li><a href="#"><span class="ti-facebook"></span></a></li>
+            <li><a href="#"><span class="ti-instagram"></span></a></li>
+            <li><a href="#"><span class="ti-google"></span></a></li>
+            <li><a href="#"><span class="ti-twitter"></span></a></li>
+            <li><a href="#"><span class="ti-linkedin"></span></a></li>
+            <li><a href="#"><span class="ti-dribbble"></span></a></li>
+          </ul>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+-->
+<!--=================================
+ mega menu -->
+
+<div class="menu">
+  <!-- menu start -->
+   <nav id="menu" class="mega-menu bg-overlay-black-90">
+    <!-- menu list items container -->
+    <section class="menu-list-items">
+     <div class="container">
+      <div class="row">
+       <div class="col-lg-12 col-md-12">
+        <!-- menu logo -->
+        <ul class="menu-logo">
+            <li>
+                <a href="/"><h1 class="theme-color"><b>{{request.domain}} </b></h1> </a>
+            </li>
+        </ul>
+        <!-- menu links -->
+        <div class="menu-bar">
+            <!--<ul class="menu-links pull-lefr">
+
+                <li><a href="javascript:void(0)">Home <i class="fa fa-angle-down fa-indicator"></i></a>
+                    &lt;!&ndash; drop down full width &ndash;&gt;
+                    <div class="drop-down grid-col-12">
+                        &lt;!&ndash;grid row&ndash;&gt;
+                        <div class="grid-row">
+                            &lt;!&ndash;grid column 3&ndash;&gt;
+                            <div class="grid-col-3">
+                                <ul>
+                                    <li><a href="index-01.html">yogachar default <span class="badge badge-primary">Default</span>
+                                    </a></li>
+                                    <li><a href="index-02.html">Classic Business </a></li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>-->
+
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </nav>
+  <!-- menu end -->
+ </div>
+</header>
+
+{% block content %}{% endblock %}
+
+{% include 'accounts/_footer.html' %}
+
+<div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-angle-up"></i> <span>TOP</span></a></div>
+
+<!--=================================
+ jquery -->
+
+<!-- jquery -->
+<script src="{% static 'webster/js/jquery-3.4.1.min.js' %}"></script>
+
+<!-- plugins-jquery -->
+<script src="{% static 'webster/js/plugins-jquery.js' %}"></script>
+
+<!-- plugin_path -->
+<script>var plugin_path = '{% static 'webster/' %}js/';</script>
+
+<!-- REVOLUTION JS FILES -->
+<script src="{% static 'webster/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'webster/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+<!-- revolution custom -->
+<script src="{% static 'webster/revolution/js/revolution-custom.js' %}"></script>
+
+<!-- custom -->
+<script src="{% static 'webster/js/custom.js' %}"></script>
+
+{% block scripts %}{% endblock %}
+    </body>
+</html>
